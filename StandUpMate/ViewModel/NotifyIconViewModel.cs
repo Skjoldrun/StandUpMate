@@ -9,7 +9,6 @@ namespace StandUpMate.ViewModel
     public class NotifyIconViewModel
     {
         private StanceTimer _stanceTimer = new StanceTimer();
-        public Window SettingsWindow { get; set; }
 
         /// <summary>
         /// Starts timer or shows remaining time.
