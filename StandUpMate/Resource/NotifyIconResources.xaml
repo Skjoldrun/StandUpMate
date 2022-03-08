@@ -4,15 +4,18 @@
                     xmlns:vm="clr-namespace:StandUpMate.ViewModel">
 
     <ContextMenu x:Shared="false" x:Key="SysTrayMenu">
-        <MenuItem Header="show settings" Command="{Binding ShowSettingsWindowCommand}" />
-        <MenuItem Header="hide settings" Command="{Binding HideSettingsWindowCommand}" />
+        <MenuItem Header="Start timer" Command="{Binding StartTimerCommand}" />
+        <MenuItem Header="Stop timer" Command="{Binding StopTimerCommand}" />
+        <MenuItem Header="Show remaining time" Command="{Binding ShowRemainingTimeCommand}" />
         <Separator />
+        <MenuItem Header="Settings" Command="{Binding ShowSettingsWindowCommand}" />
         <MenuItem Header="Close" Command="{Binding ExitApplicationCommand}" />
     </ContextMenu>
 
     <tb:TaskbarIcon x:Key="NotifyIcon"
                     IconSource="/Resource/clock.ico"
                     ToolTipText="StandUpMate"
+                    LeftClickCommand="{Binding LeftClickCommand}"
                     DoubleClickCommand="{Binding ShowSettingsWindowCommand}"
                     ContextMenu="{StaticResource SysTrayMenu}">
 

@@ -1,4 +1,5 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
+using StandUpMate.Utility;
 using System.Windows;
 
 namespace StandUpMate
@@ -8,13 +9,11 @@ namespace StandUpMate
     /// </summary>
     public partial class App : Application
     {
-        private TaskbarIcon notifyIcon;
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
+            NotifyIcon.TrayIcon = (TaskbarIcon)FindResource("NotifyIcon");
 
             // Upgrades the USersettings after upgradings the app version
             if (StandUpMate.Properties.Settings.Default.SettingsUpgradeRequired)
@@ -27,7 +26,7 @@ namespace StandUpMate
 
         protected override void OnExit(ExitEventArgs e)
         {
-            notifyIcon.Dispose();
+            NotifyIcon.TrayIcon.Dispose();
             base.OnExit(e);
         }
     }

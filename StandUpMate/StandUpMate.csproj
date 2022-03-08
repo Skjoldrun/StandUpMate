@@ -79,7 +79,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Command\DelegateCommand.cs" />
+    <Compile Include="Utility\NotifyIcon.cs" />
     <Compile Include="Utility\ObservableObject.cs" />
+    <Compile Include="Utility\StanceTimer.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NotifyIconViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">

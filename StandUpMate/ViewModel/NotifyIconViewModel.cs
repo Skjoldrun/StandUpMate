@@ -1,12 +1,40 @@
-﻿using StandUpMate.Command;
+﻿using Hardcodet.Wpf.TaskbarNotification;
+using StandUpMate.Command;
+using StandUpMate.Utility;
 using System.Windows;
 using System.Windows.Input;
 
 namespace StandUpMate.ViewModel
 {
-    internal class NotifyIconViewModel
+    public class NotifyIconViewModel
     {
+        private StanceTimer _stanceTimer = new StanceTimer();
         public Window SettingsWindow { get; set; }
+
+        /// <summary>
+        /// Starts timer or shows remaining time.
+        /// </summary>
+        public ICommand LeftClickCommand
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () => true,
+                    CommandAction = () =>
+                    {
+                        if (_stanceTimer.Timer.Enabled)
+                        {
+                            ShowRemainingTimeAsBaloon();
+                        }
+                        else
+                        {
+                            _stanceTimer.StartTimer();
+                        }
+                    }
+                };
+            }
+        }
 
         /// <summary>
         /// Shows the settings window if not opened yet.
@@ -17,11 +45,11 @@ namespace StandUpMate.ViewModel
             {
                 return new DelegateCommand
                 {
-                    CanExecuteFunc = () => SettingsWindow == null,
+                    CanExecuteFunc = () => Application.Current.MainWindow == null || Application.Current.MainWindow.IsActive == false,
                     CommandAction = () =>
                     {
-                        SettingsWindow = new MainWindow();
-                        SettingsWindow.Show();
+                        Application.Current.MainWindow = new MainWindow();
+                        Application.Current.MainWindow.Show();
                     }
                 };
             }
@@ -36,11 +64,64 @@ namespace StandUpMate.ViewModel
             {
                 return new DelegateCommand
                 {
-                    CanExecuteFunc = () => SettingsWindow != null,
+                    CanExecuteFunc = () => Application.Current.MainWindow.IsActive == true,
                     CommandAction = () =>
                     {
-                        SettingsWindow.Close();
-                        SettingsWindow = null;
+                        Application.Current.MainWindow.Close();
+                    }
+                };
+            }
+        }
+
+        /// <summary>
+        /// Starts the timer.
+        /// </summary>
+        public ICommand StartTimerCommand
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () => _stanceTimer.Timer.Enabled == false,
+                    CommandAction = () =>
+                    {
+                        _stanceTimer.StartTimer();
+                    }
+                };
+            }
+        }
+
+        /// <summary>
+        /// Stops the timer.
+        /// </summary>
+        public ICommand StopTimerCommand
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () => _stanceTimer.Timer.Enabled == true,
+                    CommandAction = () =>
+                    {
+                        _stanceTimer.StopTimer();
+                    }
+                };
+            }
+        }
+
+        /// <summary>
+        /// Stops the timer.
+        /// </summary>
+        public ICommand ShowRemainingTimeCommand
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () => _stanceTimer.Timer.Enabled == true,
+                    CommandAction = () =>
+                    {
+                        ShowRemainingTimeAsBaloon();
                     }
                 };
             }
@@ -55,6 +136,16 @@ namespace StandUpMate.ViewModel
             {
                 return new DelegateCommand { CommandAction = () => Application.Current.Shutdown() };
             }
+        }
+
+        /// <summary>
+        /// Shows the remaining time as BaloonTip.
+        /// </summary>
+        private void ShowRemainingTimeAsBaloon()
+        {
+            var title = "Timer";
+            var message = $"Remaining time: {_stanceTimer.GetRemainingTime()}";
+            NotifyIcon.TrayIcon.ShowBalloonTip(title, message, BalloonIcon.Info);
         }
     }
 }
