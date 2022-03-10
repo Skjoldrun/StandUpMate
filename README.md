@@ -5,7 +5,7 @@ This is a C# WPF Tool to remind the user to change his stance from sitting to st
 
 # Build and Test
 
-Open the solution in your IDO and build it. 
+Open the solution in your IDE and build it. 
 
 
 # Built with
