@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# Introduction 
 
-You can use the [editor on GitHub](https://github.com/Tristus-DH/StandUpMate/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+This is a C# WPF Tool to remind the user to change his stance from sitting to standing and vice versa.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+# Build and Test
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Open the solution in your IDO and build it. 
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Built with
 
-- Bulleted
-- List
+* [Icon](https://findicons.com/icon/177288/clock) - icon, licensed as CC BY-ND by Jack Cai. 
+* [WPF NotifyIcon](https://github.com/hardcodet/wpf-notifyicon) - WPF Notifyicon implementation, licensed with Code Project Open License (CPOL) 1.02 by Philipp Sumi, Robin Krom and Jan Karger.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+# Authors
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Tristus-DH/StandUpMate/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+David T. Halletz - [Tristus-DH](https://github.com/Tristus-DH)
