@@ -16,4 +16,4 @@ Open the solution in your IDE and build it.
 
 # Authors
 
-David T. Halletz - [Tristus-DH](https://github.com/Tristus-DH)
+David T. Halletz - [Skjoldrun](https://github.com/skjoldrun)
