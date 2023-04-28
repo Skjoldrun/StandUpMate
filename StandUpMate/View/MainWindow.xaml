@@ -33,7 +33,7 @@
 
         <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="Countdown in minutes:" VerticalAlignment="Top" />
         <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding Path=TimerSetting, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" VerticalAlignment="Top" />
-        <Button Grid.Row="4" Grid.Column="1" Content="Speichern" Command="{Binding SaveCommand}" Height="20" />
-        <Button Grid.Row="4" Grid.Column="3" Content="Abbrechen" Command="{Binding AbortCommand}" Height="20" />
+        <Button Grid.Row="4" Grid.Column="1" Content="Save" Command="{Binding SaveCommand}" Height="20" />
+        <Button Grid.Row="4" Grid.Column="3" Content="Cancel" Command="{Binding AbortCommand}" Height="20" />
     </Grid>
 </Window>

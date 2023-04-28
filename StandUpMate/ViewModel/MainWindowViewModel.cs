@@ -31,7 +31,7 @@ namespace StandUpMate.ViewModel
         }
 
         /// <summary>
-        /// ABorts and closes the settings window.
+        /// Aborts and closes the settings window.
         /// </summary>
         public ICommand AbortCommand
         {
