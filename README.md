@@ -2,6 +2,7 @@
 
 This is a C# WPF Tool to remind the user to change his stance from sitting to standing and vice versa.
 
+I have built this for my office time to not sit all day, but to change my desk for standing while working and get the blood flowing again.
 
 # Build and Test
 
@@ -16,4 +17,4 @@ Open the solution in your IDE and build it.
 
 # Authors
 
-David T. Halletz - [Skjoldrun](https://github.com/skjoldrun)
+David T. Halletz - [Skjoldrun](https://github.com/Skjoldrun)
