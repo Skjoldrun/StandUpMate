@@ -15,7 +15,7 @@ namespace StandUpMate
 
             NotifyIcon.TrayIcon = (TaskbarIcon)FindResource("NotifyIcon");
 
-            // Upgrades the USersettings after upgradings the app version
+            // Upgrades the Usersettings after upgrading the app version
             if (StandUpMate.Properties.Settings.Default.SettingsUpgradeRequired)
             {
                 StandUpMate.Properties.Settings.Default.Upgrade();
